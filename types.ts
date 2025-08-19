@@ -20,6 +20,7 @@ export type Story = {
   title: string;
   startSceneId: string;
   scenes: Scene[];
+  coverImageUrl?: string;
 };
 
 export enum GameState {

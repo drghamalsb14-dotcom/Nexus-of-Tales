@@ -71,6 +71,7 @@ const App: React.FC = () => {
             onSelectChoice={handleSelectChoice}
             onBackToMenu={handleBackToMenu}
             uiText={uiText}
+            coverImageUrl={currentStory.coverImageUrl}
           />
         ) : null;
       case GameState.Loading:

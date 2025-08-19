@@ -40,6 +40,30 @@ const storySchema = {
   required: ["title", "startSceneId", "scenes"]
 };
 
+const generateStoryImage = async (theme: string, title: string): Promise<string | undefined> => {
+  try {
+    const imagePrompt = `A cinematic, atmospheric book cover for a text adventure game titled "${title}". The theme is ${theme}. Digital painting, epic, detailed, moody lighting.`;
+    const response = await ai.models.generateImages({
+        model: 'imagen-3.0-generate-002',
+        prompt: imagePrompt,
+        config: {
+          numberOfImages: 1,
+          outputMimeType: 'image/jpeg',
+          aspectRatio: '16:9',
+        },
+    });
+
+    if (response.generatedImages && response.generatedImages.length > 0) {
+      const base64ImageBytes: string = response.generatedImages[0].image.imageBytes;
+      return `data:image/jpeg;base64,${base64ImageBytes}`;
+    }
+    return undefined;
+  } catch(error) {
+    console.error("Error generating story image:", error);
+    return undefined; // Gracefully fail, story can proceed without an image
+  }
+}
+
 
 export const generateStory = async (theme: string, languageName: string): Promise<Story> => {
   const prompt = `
@@ -99,6 +123,10 @@ export const generateStory = async (theme: string, languageName: string): Promis
     if (!storyData.scenes || !storyData.startSceneId || storyData.scenes.length === 0) {
         throw new Error("Invalid story structure received from API.");
     }
+    
+    // Generate a cover image for the story
+    const coverImageUrl = await generateStoryImage(theme, storyData.title);
+    storyData.coverImageUrl = coverImageUrl;
 
     return storyData as Story;
 

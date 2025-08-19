@@ -32,7 +32,7 @@ type UiText = {
   title: string;
   subtitle: string;
   chooseYourStory: string;
-  loadingMessage: string;
+  loadingMessages: string[];
   errorMessage: string;
   tryAgain: string;
   backToMenu: string;
@@ -46,7 +46,7 @@ export const UI_TEXT: { [key: string]: UiText } = {
     title: 'Nexus of Tales',
     subtitle: 'Your Adventure Awaits',
     chooseYourStory: 'Choose Your Story',
-    loadingMessage: 'Weaving your fate...',
+    loadingMessages: ['Weaving your fate...', 'Consulting the ancient oracles...', 'Plotting dastardly twists...', 'Polishing the hero\'s armor...', 'Generating a universe...'],
     errorMessage: 'An error occurred while crafting your story. Please try again.',
     tryAgain: 'Try Again',
     backToMenu: 'Back to Menu',
@@ -71,7 +71,7 @@ export const UI_TEXT: { [key: string]: UiText } = {
     title: 'ملتقى الحكايات',
     subtitle: 'مغامرتك تنتظرك',
     chooseYourStory: 'اختر حكايتك',
-    loadingMessage: 'ننسج قدرك...',
+    loadingMessages: ['ننسج قدرك...', 'استشارة الأوراكل القديمة...', 'التخطيط للتحولات الغادرة...', 'صقل درع البطل...', 'توليد عالم...'],
     errorMessage: 'حدث خطأ أثناء صياغة قصتك. الرجاء معاودة المحاولة.',
     tryAgain: 'حاول مرة أخرى',
     backToMenu: 'العودة للقائمة',
@@ -96,7 +96,7 @@ export const UI_TEXT: { [key: string]: UiText } = {
     title: 'Nexus van Verhalen',
     subtitle: 'Jouw Avontuur Wacht',
     chooseYourStory: 'Kies Je Verhaal',
-    loadingMessage: 'Je lot wordt geweven...',
+    loadingMessages: ['Je lot wordt geweven...', 'De oude orakels raadplegen...', 'Duivelse wendingen plotten...', 'Het harnas van de held polijsten...', 'Een universum genereren...'],
     errorMessage: 'Er is een fout opgetreden. Probeer het opnieuw.',
     tryAgain: 'Probeer Opnieuw',
     backToMenu: 'Terug naar Menu',
@@ -121,7 +121,7 @@ export const UI_TEXT: { [key: string]: UiText } = {
     title: 'Nexus des Contes',
     subtitle: 'Votre Aventure Vous Attend',
     chooseYourStory: 'Choisissez Votre Histoire',
-    loadingMessage: 'Tissage de votre destin...',
+    loadingMessages: ['Tissage de votre destin...', 'Consultation des anciens oracles...', 'Comploter des rebondissements ignobles...', 'Polir l\'armure du héros...', 'Génération d\'un univers...'],
     errorMessage: "Une erreur est survenue. Veuillez réessayer.",
     tryAgain: 'Réessayer',
     backToMenu: 'Retour au Menu',
@@ -146,7 +146,7 @@ export const UI_TEXT: { [key: string]: UiText } = {
     title: 'Nexo de Relatos',
     subtitle: 'Tu Aventura te Espera',
     chooseYourStory: 'Elige Tu Historia',
-    loadingMessage: 'Tejiendo tu destino...',
+    loadingMessages: ['Tejiendo tu destino...', 'Consultando a los antiguos oráculos...', 'Tramando giros malvados...', 'Puliendo la armadura del héroe...', 'Generando un universo...'],
     errorMessage: 'Ocurrió un error. Por favor, inténtalo de nuevo.',
     tryAgain: 'Intentar de Nuevo',
     backToMenu: 'Volver al Menú',
