@@ -46,16 +46,18 @@ const MainMenu: React.FC<MainMenuProps> = ({ onStartGame, currentLanguage, setCu
             <div
               key={theme.id}
               onClick={() => onStartGame(theme.id)}
-              className="group relative rounded-lg overflow-hidden cursor-pointer transform hover:scale-105 transition-transform duration-300 shadow-lg shadow-black/30 h-48"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className={`group rounded-lg overflow-hidden cursor-pointer transform hover:-translate-y-2 transition-transform duration-300 shadow-lg shadow-black/40 flex flex-col justify-center animate-fade-in-up bg-gradient-to-br ${theme.gradient} h-52 p-5 text-left`}
+              style={{
+                animationDelay: `${index * 75}ms`,
+                opacity: 0,
+              }}
             >
-              <img src={theme.image} alt={uiText.themes[theme.id].title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-80 transition-all duration-300 flex flex-col items-center justify-center p-4">
-                <h3 className="text-xl font-bold text-white text-center font-cairo">{uiText.themes[theme.id].title}</h3>
-                 <p className="text-sm text-gray-300 mt-2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-150">
-                  {uiText.themes[theme.id].description}
-                </p>
-              </div>
+              <h3 className="text-xl font-bold font-cairo tracking-wide mb-2 text-white">
+                {uiText.themes[theme.id].title}
+              </h3>
+              <p className="text-sm text-gray-200">
+                {uiText.themes[theme.id].description}
+              </p>
             </div>
           ))}
         </div>
