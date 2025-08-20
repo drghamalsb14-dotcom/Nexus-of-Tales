@@ -29,3 +29,21 @@ export enum GameState {
   Playing,
   Error,
 }
+
+export type ThemeText = {
+    title: string;
+    description: string;
+}
+
+export type UiText = {
+  title: string;
+  subtitle: string;
+  chooseYourStory: string;
+  loadingMessages: string[];
+  errorMessage: string;
+  tryAgain: string;
+  backToMenu: string;
+  playAgain: string;
+  theEnd: string;
+  themes: { [key: string]: ThemeText };
+};

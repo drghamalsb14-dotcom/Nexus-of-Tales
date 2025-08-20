@@ -1,4 +1,4 @@
-import type { Language } from './types';
+import type { Language, UiText } from './types';
 
 export const LANGUAGES: Language[] = [
   { code: 'en', name: 'English', dir: 'ltr' },
@@ -23,27 +23,9 @@ export const STORY_THEMES = [
   { id: 'pirate-adventure', gradient: 'from-sky-700 via-teal-800 to-gray-900' },
   { id: 'spy-thriller', gradient: 'from-red-800 via-rose-900 to-black' },
   { id: 'western-showdown', gradient: 'from-orange-700 via-amber-800 to-stone-900' },
-  { id: 'jungle-expedition', gradient: 'from-green-700 via-lime-800 to-emerald-900' },
+  { id: 'romance-story', gradient: 'from-rose-500 via-red-600 to-violet-700' },
   { id: 'viking-saga', gradient: 'from-blue-800 via-sky-900 to-slate-900' },
 ];
-
-type ThemeText = {
-    title: string;
-    description: string;
-}
-
-type UiText = {
-  title: string;
-  subtitle: string;
-  chooseYourStory: string;
-  loadingMessages: string[];
-  errorMessage: string;
-  tryAgain: string;
-  backToMenu: string;
-  playAgain: string;
-  theEnd: string;
-  themes: { [key: string]: ThemeText };
-};
 
 export const UI_TEXT: { [key: string]: UiText } = {
   en: {
@@ -71,7 +53,7 @@ export const UI_TEXT: { [key: string]: UiText } = {
       'pirate-adventure': { title: 'Pirate Adventure', description: 'Seek legendary treasure on the high seas. Fortune or a watery grave awaits.' },
       'spy-thriller': { title: 'Spy Thriller', description: 'A web of deceit, a stolen secret. In the world of espionage, trust no one to survive.' },
       'western-showdown': { title: 'Western Showdown', description: 'A dusty town, a notorious outlaw, and a debt to be settled at high noon. Draw!' },
-      'jungle-expedition': { title: 'Jungle Expedition', description: 'Chart a path through an untamed jungle to find a forgotten temple and its legendary treasure.' },
+      'romance-story': { title: 'Romance Story', description: 'In a city of art and secrets, navigate a complex relationship where love and ambition collide.' },
       'viking-saga': { title: 'Viking Saga', description: 'Sail the icy seas, raid foreign shores, and earn your place in Valhalla among the gods.' },
     },
   },
@@ -100,7 +82,7 @@ export const UI_TEXT: { [key: string]: UiText } = {
       'pirate-adventure': { title: 'مغامرة القراصنة', description: 'ارفع الأشرعة وابحث عن الكنز الأسطوري في البحار الغادرة. الثروة أو قبر مائي في انتظارك.' },
       'spy-thriller': { title: 'جاسوسية مثيرة', description: 'شبكة من الخداع، سر مسروق. في عالم الجاسوسية، لا تثق بأحد للبقاء على قيد الحياة.' },
       'western-showdown': { title: 'مواجهة الغرب', description: 'بلدة مغبرة، خارج عن القانون سيئ السمعة، ودين يجب تسويته عند الظهيرة. اسحب!' },
-      'jungle-expedition': { title: 'رحلة في الغابة', description: 'ارسم طريقًا عبر غابة جامحة للعثور على معبد منسي وكنزه الأسطوري.' },
+      'romance-story': { title: 'قصة رومانسية', description: 'في مدينة الفن والأسرار، خض علاقة معقدة حيث يتصادم الحب والطموح.' },
       'viking-saga': { title: 'ملحمة الفايكنج', description: 'أبحر في البحار الجليدية، أغر على الشواطئ الأجنبية، واكسب مكانك في فالهالا بين الآلهة.' },
     },
   },
@@ -129,7 +111,7 @@ export const UI_TEXT: { [key: string]: UiText } = {
         'pirate-adventure': { title: 'Piratenavontuur', description: 'Hijs de zeilen en zoek naar legendarische schatten. Fortuin of een watergraf wacht.' },
         'spy-thriller': { title: 'Spionagethriller', description: 'Een web van bedrog, een gestolen geheim. Vertrouw niemand om te overleven in de wereld van spionage.' },
         'western-showdown': { title: 'Westerse Confrontatie', description: 'Een stoffig stadje, een beruchte outlaw, en een schuld die om twaalf uur \'s middags vereffend moet worden. Trek!' },
-        'jungle-expedition': { title: 'Jungle Expeditie', description: 'Baan je een weg door een ongetemde jungle om een vergeten tempel en zijn legendarische schat te vinden.' },
+        'romance-story': { title: 'Romantisch Verhaal', description: 'Navigeer in een stad van kunst en geheimen een complexe relatie waar liefde en ambitie botsen.' },
         'viking-saga': { title: 'Viking Saga', description: 'Bezeil de ijzige zeeën, plunder vreemde kusten en verdien je plaats in Walhalla tussen de goden.' },
     },
   },
@@ -158,7 +140,7 @@ export const UI_TEXT: { [key: string]: UiText } = {
         'pirate-adventure': { title: 'Aventure de Pirate', description: 'Hissez les voiles et cherchez un trésor légendaire. La fortune ou une tombe aquatique vous attend.' },
         'spy-thriller': { title: 'Thriller d\'Espionnage', description: 'Un réseau de tromperies, un secret volé. Dans le monde de l\'espionnage, ne faites confiance à personne pour survivre.' },
         'western-showdown': { title: 'Confrontation Western', description: 'Une ville poussiéreuse, un hors-la-loi notoire, et une dette à régler à midi. Dégainez !' },
-        'jungle-expedition': { title: 'Expédition dans la Jungle', description: 'Tracez un chemin à travers une jungle sauvage pour trouver un temple oublié et son trésor légendaire.' },
+        'romance-story': { title: 'Histoire Romantique', description: 'Dans une ville d\'art et de secrets, naviguez dans une relation complexe où l\'amour et l\'ambition s\'affrontent.' },
         'viking-saga': { title: 'Saga Viking', description: 'Naviguez sur les mers glacées, pillez les rivages étrangers et gagnez votre place au Valhalla parmi les dieux.' },
     },
   },
@@ -187,7 +169,7 @@ export const UI_TEXT: { [key: string]: UiText } = {
         'pirate-adventure': { title: 'Aventura Pirata', description: 'Iza las velas y busca tesoros legendarios. La fortuna o una tumba acuática te espera.' },
         'spy-thriller': { title: 'Thriller de Espías', description: 'Una red de engaños, un secreto robado. En el mundo del espionaje, no confíes en nadie para sobrevivir.' },
         'western-showdown': { title: 'Duelo en el Oeste', description: 'Un pueblo polvoriento, un forajido notorio y una deuda que saldar al mediodía. ¡Desenfundar!' },
-        'jungle-expedition': { title: 'Expedición en la Jungla', description: 'Traza un camino a través de una jungla indómita para encontrar un templo olvidado y su tesoro legendario.' },
+        'romance-story': { title: 'Historia Romántica', description: 'En una ciudad de arte y secretos, navega una relación compleja donde el amor y la ambición chocan.' },
         'viking-saga': { title: 'Saga Vikinga', description: 'Navega por los mares helados, saquea costas extrañas y gánate tu lugar en el Valhalla entre los dioses.' },
     },
   },

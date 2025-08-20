@@ -1,11 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
+import type { UiText } from '../types';
 
 const LoadingSpinner: React.FC = () => (
     <div className="w-16 h-16 border-4 border-t-transparent border-teal-400 border-solid rounded-full animate-spin"></div>
 );
 
-const LoadingScreen: React.FC<{ uiText: any }> = ({ uiText }) => {
+const LoadingScreen: React.FC<{ uiText: UiText }> = ({ uiText }) => {
   const [messageIndex, setMessageIndex] = useState(0);
 
   useEffect(() => {
